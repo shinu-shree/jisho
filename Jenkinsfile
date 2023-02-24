@@ -6,6 +6,10 @@ pipeline {
 	        steps {
 			checkout scm			       
 		      }}
+		      options {
+  buildDiscarder logRotator(artifactDaysToKeepStr: '', artifactNumToKeepStr: '', daysToKeepStr: '3', numToKeepStr: '4')
+}
+
 		stage('Build') {
 	           steps {
 			  sh '/home/shreena/Documents/GRRAS/apache-maven-3.8.7/bin/mvn install'
