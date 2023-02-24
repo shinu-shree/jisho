@@ -1,14 +1,16 @@
 pipeline {
 	agent any
+	options {
+  buildDiscarder logRotator(artifactDaysToKeepStr: '', artifactNumToKeepStr: '', daysToKeepStr: '3', numToKeepStr: '4')
+}
+
 	
 	stages {
 	    stage('Checkout') {
 	        steps {
 			checkout scm			       
 		      }}
-		      options {
-  buildDiscarder logRotator(artifactDaysToKeepStr: '', artifactNumToKeepStr: '', daysToKeepStr: '3', numToKeepStr: '4')
-}
+		     
 
 		stage('Build') {
 	           steps {
