@@ -3,6 +3,11 @@ pipeline {
 	options {
   buildDiscarder logRotator(artifactDaysToKeepStr: '', artifactNumToKeepStr: '', daysToKeepStr: '3', numToKeepStr: '4')
 }
+parameters {
+  choice choices: [''], description: '''QA
+UAT
+DEV''', name: 'ENVIRONMENT'
+}
 
 	
 	stages {
