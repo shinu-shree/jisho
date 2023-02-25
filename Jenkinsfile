@@ -26,8 +26,4 @@ DEV''', name: 'ENVIRONMENT'
 			
 			sh 'cp target/jisho.war /home/shreena/Documents/GRRAS/apache-tomcat-9.0.71/webapps'
 	}
-}}
- parameters {
-  choice choices: ['QA', 'UAT', 'DEV'], name: 'ENVIRONMENT '
-  string defaultValue: 'QA', name: 'ENVIRONMENT'
-}}
+}}}
